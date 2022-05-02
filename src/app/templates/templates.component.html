@@ -1,0 +1,5 @@
+<ng-container *ngTemplateOutlet="templateHeader"></ng-container>
+<ng-container *ngFor="let number of items">
+  <ng-container *ngTemplateOutlet="templateBody; context: {$implicit: 'bla-bla', item: number}"></ng-container>
+</ng-container>
+<ng-container *ngTemplateOutlet="templateFooter"></ng-container>
