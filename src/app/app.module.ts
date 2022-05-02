@@ -5,12 +5,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TemplatesComponent } from './templates/templates.component';
 import { TemplateTypeDirective } from './template-type.directive';
+import { DummyDirective } from './templates/dummy.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     TemplatesComponent,
-    TemplateTypeDirective
+    TemplateTypeDirective,
+    DummyDirective
   ],
   imports: [
     BrowserModule,

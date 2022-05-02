@@ -1,4 +1,4 @@
-import {Directive, Input, TemplateRef} from '@angular/core';
+import {Directive, ElementRef, HostListener, Input, TemplateRef, ViewContainerRef} from '@angular/core';
 
 export type TemplateType = 'header' | 'body' | 'footer';
 
@@ -6,13 +6,11 @@ export type TemplateType = 'header' | 'body' | 'footer';
   selector: '[appTemplateType]'
 })
 export class TemplateTypeDirective {
-  @Input() appTemplateType!: TemplateType;
+  @Input() type!: TemplateType;
 
-  constructor(private readonly template: TemplateRef<any>) { }
-
-  getType(): TemplateType {
-    return this.appTemplateType;
-  }
+  constructor(
+    private readonly template: TemplateRef<any>,
+  ) { }
 
   getTemplate(): TemplateRef<any> {
     return this.template;

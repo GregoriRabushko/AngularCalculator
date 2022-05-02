@@ -30,7 +30,7 @@ export class TemplatesComponent implements OnInit, AfterContentInit {
 
   ngAfterContentInit(): void {
     this.templates.forEach(t => {
-      switch (t.getType()) {
+      switch (t.type) {
         case 'header':
           this.templateHeader = t.getTemplate();
           break;
