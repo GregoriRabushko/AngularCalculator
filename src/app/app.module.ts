@@ -1,16 +1,19 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
+import { AppRoutingModule } from './app-routing.module'; //Машрутизация приложения
+import { AppComponent } from './app.component';//Компонент приложения
+import {FormsModule} from "@angular/forms";
+import {CalculatorModule} from "./calculator/calculator.module";
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    CalculatorModule
   ],
   providers: [],
   bootstrap: [AppComponent]

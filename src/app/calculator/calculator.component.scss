@@ -1,0 +1,92 @@
+html {
+  background-color: rgba(215, 220, 171, 0.61);
+}
+
+.navigationOnThisPage {
+  background-color: #ff00d5;
+  width: 100%;
+  height: max-content;
+  text-align: center;
+  font-size: 40px;
+  border: none;
+  border-bottom: 3px solid rgba(187, 13, 138, 0.73);
+  border-bottom-left-radius: 10px;
+}
+
+body {
+  margin: unset;
+}
+
+.backgroundBodyNewCalculate {
+  background-color: #504a4a;
+  display: block;
+  max-width: max-content;
+  border-radius: 10%;
+  border: 3px solid black;
+  margin-top: 50px;
+  margin-left: 45%;
+}
+
+/*BUTTON GROUP*/
+
+
+
+.operatorsButtonDelete {
+  margin-left: 5px;
+  margin-right: 5px;
+  color: red;
+}
+
+.lastSectionCalculateButton {
+  margin-bottom: 10px;
+}
+
+.headerCalculate {
+  margin-left: 50%;
+}
+
+/*INPUT*/
+.calculatorsScreen {
+  font-max-size: 40px;
+  text-align: right;
+  //font-family: "Bauhaus 93";
+  margin: 10px;
+  height: 50px;
+  background: #7dd5b3;
+  border-bottom: 1px solid white;
+  max-width: max-content;
+}
+
+.deleteLastSymbolInput {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+  margin: unset;
+  padding: 5px;
+  border-radius: 2px;
+  width: unset;
+  height: unset;
+}
+
+.deleteLastSymbolInput:hover {
+  background-color: gray !important;
+}
+
+.inputWithButtonDelete {
+  text-align: center;
+}
+
+app-input-button {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.buttonGroup {
+  margin: 10px 5px;
+}
+
+.resultButton {
+  margin-left: 5px;
+  margin-right: 5px;
+}

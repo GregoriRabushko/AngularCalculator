@@ -6,5 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'AngularCalculator';
+  title = 5;
+  currency = 'BYN'
+  someArray = ['BYN', 'RUR', 'USD']
 }
