@@ -7,25 +7,45 @@ import {CalculatorService} from "./calculator.service";
   styleUrls: ['./calculator.component.scss']
 })
 export class CalculatorComponent implements OnInit {
-  numberEnter = '';
+  objFromTaskAndAnswer = { numberEnter : '', answer:''};
+  condition = true;
+  inputResultTrueOrFalse!: string;
 
   constructor(private readonly calculationService: CalculatorService) { }
 
   ngOnInit(): void {
   }
 
-  deleteLastSymbolInput(): void {
-    const charString = this.numberEnter.split('');
-    charString.pop();
-    this.numberEnter = charString.join('');
-  }
+  // deleteLastSymbolInput(): void {
+  //   const charString = this.numberEnter.split('');
+  //   charString.pop();
+  //   this.numberEnter = charString.join('');
+  // }
 
   addSymbol(char: string): void {
-    this.numberEnter += char;
+    this.objFromTaskAndAnswer.numberEnter += char;
+    console.log(this.objFromTaskAndAnswer.numberEnter)
+
+    if(this.condition) {
+      this.inputResultTrueOrFalse = this.objFromTaskAndAnswer.numberEnter;
+    }
   }
 
   calculate() {
-    this.numberEnter = this.calculationService.calculate(this.numberEnter).toString(10);
-    // displayHistory(this.numberEnter);
+    this.objFromTaskAndAnswer.answer = this.calculationService.calculate(this.objFromTaskAndAnswer.numberEnter).toString(10);
+    this.condition = false;
+    console.log(this.objFromTaskAndAnswer.answer);
+
+    if (!this.condition) {
+      this.inputResultTrueOrFalse = this.objFromTaskAndAnswer.answer;
+    }
   }
+
+  // inputEnterTrueOrFalse() {
+  //   if(this.condition) {
+  //     this.inputResultTrueOrFalse = this.obj.numberEnter;
+  //   } else {
+  //     this.inputResultTrueOrFalse = this.obj.resultCalculate;
+  //   }
+  // }
 }

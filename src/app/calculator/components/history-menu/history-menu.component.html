@@ -2,10 +2,12 @@
   <ng-content select="div">
   </ng-content>
 
-  <div class="firstDivMenuClass">Your history
-    <ng-content select="span"></ng-content>
-  </div>
+  <div class="firstDivMenuClass">Your history</div>
   <div class="secondDivMenuClass">Your history</div>
-  <div ></div>
-  <button class="clearHistory" id="clearHistory">Clear History</button>
+  <div *ngIf="!condition; else templateWithHistory">Здесь будет твоя история</div>
+  <ng-template #templateWithHistory>
+    <div *ngFor="let item of arrWithContentExample">{{item.task + '=' + item.answer}}</div>
+  </ng-template>
+  <div>{{answer}}={{task}}</div>
+  <button class="clearHistory" id="clearHistory" (click)="clearHistoryButton()">Clear History</button>
 </div>

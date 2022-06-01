@@ -1,18 +1,14 @@
-<app-history-menu>
-    <div #divContent>template div</div>
-    <span #spanContent>template span</span>
-</app-history-menu>
+<app-history-menu [answer]="obj.numberEnter" [task]="obj.resultCalculate"></app-history-menu>
 <div class="navigationOnThisPage">Привет я твой персональный калькулятор!!</div>
 <div>
   <div class="backgroundBodyNewCalculate">
     <div class="headerCalculate">Your new calculate))</div>
     <div class="inputWithButtonDelete">
-      <input [(ngModel)]="numberEnter" class="calculatorsScreen" type="text"/>
-      <div class="calculatorsScreen">{{numberEnter | calculatorOutput: '='}}</div>
-      <button (click)="deleteLastSymbolInput()" class="deleteLastSymbolInput"><=</button>
+      <input [(ngModel)]="inputResultTrueOrFalse" class="calculatorsScreen" type="text"/>
+<!--      <button (click)="deleteLastSymbolInput()" class="deleteLastSymbolInput"><=</button>-->
     </div>
     <div class="buttonGroup">
-      <button (click)="numberEnter = ''" class="operatorsButtonDelete">C</button>
+      <button (click)="obj.numberEnter = ''" class="operatorsButtonDelete">C</button>
       <app-input-button [buttonText]="'('" (addSymbol)="addSymbol($event)" [buttonType]="'operatorButton'"></app-input-button>
       <app-input-button [buttonText]="')'" (addSymbol)="addSymbol($event)" [buttonType]="'operatorButton'"></app-input-button>
       <app-input-button [buttonText]="'/'" (addSymbol)="addSymbol($event)" [buttonType]="'operatorButton'"></app-input-button>
