@@ -8,8 +8,9 @@ import {CalculatorService} from "./calculator.service";
 })
 export class CalculatorComponent implements OnInit {
   objFromTaskAndAnswer = { numberEnter : '', answer:''};
-  condition = true;
-  inputResultTrueOrFalse!: string;
+  // condition = true;
+  // inputResultTrueOrFalse!: string;
+  taskInput!:string;
 
   constructor(private readonly calculationService: CalculatorService) { }
 
@@ -24,21 +25,27 @@ export class CalculatorComponent implements OnInit {
 
   addSymbol(char: string): void {
     this.objFromTaskAndAnswer.numberEnter += char;
-    console.log(this.objFromTaskAndAnswer.numberEnter)
+    console.log(this.objFromTaskAndAnswer.numberEnter, 'TASK')
+    // this.condition = true ;
 
-    if(this.condition) {
-      this.inputResultTrueOrFalse = this.objFromTaskAndAnswer.numberEnter;
-    }
+    this.taskInput = this.objFromTaskAndAnswer.numberEnter;
+
+    // if(this.condition) {
+    //   this.inputResultTrueOrFalse = this.objFromTaskAndAnswer.numberEnter;
+    // }
   }
 
   calculate() {
     this.objFromTaskAndAnswer.answer = this.calculationService.calculate(this.objFromTaskAndAnswer.numberEnter).toString(10);
-    this.condition = false;
-    console.log(this.objFromTaskAndAnswer.answer);
+    // this.condition = false;
+    console.log(this.objFromTaskAndAnswer.answer, 'ANSWER');
 
-    if (!this.condition) {
-      this.inputResultTrueOrFalse = this.objFromTaskAndAnswer.answer;
-    }
+    this.objFromTaskAndAnswer.numberEnter = this.objFromTaskAndAnswer.answer;
+    console.log(this.taskInput, 'taskInput');
+
+    // if (!this.condition) {
+    //   this.inputResultTrueOrFalse = this.objFromTaskAndAnswer.answer;
+    // }
   }
 
   // inputEnterTrueOrFalse() {
