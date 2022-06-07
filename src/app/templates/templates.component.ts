@@ -18,6 +18,7 @@ export class TemplatesComponent implements OnInit, AfterContentInit {
   templateBody!: TemplateRef<TemplateTypeDirective>;
   templateFooter!: TemplateRef<TemplateTypeDirective>;
 
+  data: any = null;
   @Input() items: any = [];
 
   @ContentChildren(TemplateTypeDirective, {read: TemplateTypeDirective}) templates!: QueryList<TemplateTypeDirective>;
@@ -25,7 +26,8 @@ export class TemplatesComponent implements OnInit, AfterContentInit {
   constructor() {
   }
 
-  ngOnInit(): void {
+  ngOnInit() {
+    this.data = this.testPromise();
   }
 
   ngAfterContentInit(): void {
@@ -42,5 +44,51 @@ export class TemplatesComponent implements OnInit, AfterContentInit {
           break;
       }
     })
+  }
+
+  testPromise() {
+      return fetch('https://jsonplaceholder.typicode.com/todos/1').then(r => r.json());
+    // return new Promise((resolve, reject) => {
+      // let result = 0;
+      // for (let i = 0; i < 1000_000; i++) {
+      //   result += i;
+      // }
+      // console.log('work')
+      // resolve(`Good Result`);
+      // reject(`Bad Result ${result}`);
+    // })
+  }
+
+  async getData() {
+    return await this.testPromise();
+    //   .then(data => {
+    //   console.log(data);
+    // })
+    //   .then(console.log);
+    //   .then(data => this.data = data)
+    //   .catch(err => console.log(err))
+    //   .finally(() => {
+    //     console.log('final')});
+    ////----------
+    ////----------
+    ////----------
+    ////----------
+  }
+
+  async testPromise3(): Promise<void> {
+    //  ---------------------
+    //  ---------------------
+    //  ---------------------
+    //  ---------------------
+    try {
+      this.data = await this.testPromise();
+    } catch (e) {
+    } finally {
+
+    }
+    // ---------------DDD
+    // ---------------DDD
+    // ---------------DDD
+    // ---------------DDD
   }
 }
