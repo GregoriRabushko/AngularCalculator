@@ -1,18 +1,19 @@
-<app-templates [items]="[1,2,3]">
-  <ng-template appTemplateType #headerTmpl [type]="'header'" let-data>
-    <div>Test template header {{data}}</div>
-  </ng-template>
-  <ng-template appTemplateType [type]="'body'" let-noName let-order="item">
-    <div>Test template body {{noName}} ({{order}})</div>
-  </ng-template>
-  <ng-template appTemplateType [type]="'footer'">
-    <div>Test template footer</div>
-  </ng-template>
-</app-templates>
+<!--<app-templates [items]="[1,2,3]">-->
+<!--  <ng-template appTemplateType #headerTmpl [type]="'header'" let-data>-->
+<!--    <div>Test template header {{data}}</div>-->
+<!--  </ng-template>-->
+<!--  <ng-template appTemplateType [type]="'body'" let-noName let-order="item">-->
+<!--    <div>Test template body {{noName}} ({{order}})</div>-->
+<!--  </ng-template>-->
+<!--  <ng-template appTemplateType [type]="'footer'">-->
+<!--    <div>Test template footer</div>-->
+<!--  </ng-template>-->
+<!--</app-templates>-->
 
-<hr/>
+<!--<hr/>-->
 
-<div appDummy [colorEnter]="'yellow'" [colorLeave]="'blue'">TEST</div>
-<div appDummy>TEST</div>
+<!--<div appDummy [colorEnter]="'yellow'" [colorLeave]="'blue'">TEST</div>-->
+<!--<div appDummy>TEST</div>-->
 
-<ng-container *ngTemplateOutlet="headerTmpl; context: {$implicit: 'some data'}"></ng-container>
+<!--<ng-container *ngTemplateOutlet="headerTmpl; context: {$implicit: 'some data'}"></ng-container>-->
+<app-test-observables></app-test-observables>

@@ -1,0 +1,5 @@
+<ng-container *ngIf="observable$ | async">
+  <div *ngIf="data">{{data | date:'HH:mm:ss'}}</div>
+  <div *ngIf="num">{{num}}</div>
+</ng-container>
+<!--<div *ngIf="data">{{data}}</div>-->

@@ -59,6 +59,14 @@ export class TemplatesComponent implements OnInit, AfterContentInit {
     // })
   }
 
+  testPromise2() {
+      return fetch('https://jsonplaceholder.typicode.com/todos/2').then(r => r.json());
+  }
+
+  testPromise4() {
+      return fetch('https://jsonplaceholder.typicode.com/todos/3').then(r => r.json());
+  }
+
   async getData() {
     return await this.testPromise();
     //   .then(data => {
@@ -90,5 +98,16 @@ export class TemplatesComponent implements OnInit, AfterContentInit {
     // ---------------DDD
     // ---------------DDD
     // ---------------DDD
+  }
+
+  async promiseAll() {
+    const data = Promise.resolve(12345);
+    const dataError = Promise.reject(new Error('Data not found!'));
+
+    const [results1, results2, results3] = await Promise.all([
+      this.testPromise(),
+      this.testPromise2(),
+      this.testPromise4()
+    ]);
   }
 }
