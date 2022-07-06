@@ -8,6 +8,7 @@ import { TemplateHeaderComponent } from './template-header/template-header.compo
 import { TemplateBodyComponent } from './template-body/template-body.component';
 import { HeaderHistoryComponent } from './template-body/header-history/header-history.component';
 import { HeaderSchematicComponent } from './template-body/header-schematic/header-schematic.component';
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -18,10 +19,11 @@ import { HeaderSchematicComponent } from './template-body/header-schematic/heade
     HeaderHistoryComponent,
     HeaderSchematicComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        FormsModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

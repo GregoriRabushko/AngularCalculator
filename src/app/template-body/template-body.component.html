@@ -1,1 +1,11 @@
-<p>template-body works!</p>
+<span class="parentDiv">
+  <div class="inputWithDeleteItemInput">
+    <input [(ngModel)]="numberEnter" placeholder="" type="text">
+    <button class="deleteItemInput" (click)="deleteItem()"><=</button>
+  </div>
+  <div class="otherButtons">
+    <button *ngFor="let item of buttonInto" (click)="numberEnterInput(item)">{{item}}</button>
+    <button>=</button>
+    <button (click)="clearInput()">AC</button>
+  </div>
+</span>
