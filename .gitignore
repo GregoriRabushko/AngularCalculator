@@ -40,3 +40,5 @@ testem.log
 # System files
 .DS_Store
 Thumbs.db
+!/src/app/input/input.component.ts
+!/src/app/template-body/

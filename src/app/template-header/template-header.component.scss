@@ -1,0 +1,87 @@
+.parentDiv {
+  display: flex;
+  width: 100%;
+  height: 74px;
+  background:orchid;
+}
+
+//=======images
+.imgHeaderEmblem {
+  width: 50px;
+  height: 50px;
+  margin: 12px 50px 12px 350px;
+  border-radius: 5px 20px;
+}
+
+.imgOutButton{
+  width: 74px;
+  height: 74px;
+  margin-left: 200px;
+}
+
+//=========any
+ul {
+  margin: 0px;
+  display: flex;
+}
+
+li {
+  display: flex;
+  margin-top:12px;
+  font-family: "Microsoft New Tai Lue";
+  letter-spacing: 5px;
+  font-size: 20px;
+  text-transform: lowercase;
+}
+
+//===========без наведения на ссылку
+li a {
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 17px 20px 16px 20px;
+}
+
+li a.history {
+  border-right: 1px solid rgba(0, 0, 0, 0.47);
+  padding-bottom: 5px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.47);
+  border-top: none;
+  border-bottom-right-radius: 30px;
+}
+
+li a.schematic {
+  border: 1px solid rgba(0, 0, 0, 0.47);
+  border-top: none;
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+}
+
+li a.any {
+  border-left: 1px solid rgba(0, 0, 0, 0.47);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.47);
+  border-top: none;
+  border-bottom-left-radius: 30px;
+}
+
+
+//=========когда наводишь на ссылку
+li a.history:hover {
+  border-right: 2px solid black;
+  border-bottom: 2px solid black;
+  box-shadow: 0px 5px 5px grey;
+}
+
+li a.schematic:hover {
+  border: 2px solid black;
+  border-top: none;
+  box-shadow: 0px 5px 5px grey;
+}
+
+li a.any:hover {
+    padding-bottom: 5px;
+    border-bottom: 2px solid black;
+    border-left: 2px solid black;
+    box-shadow: 0px 5px 5px grey;
+}
+
+

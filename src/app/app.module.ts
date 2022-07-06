@@ -4,15 +4,19 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TemplatesComponent } from './templates/templates.component';
-import { TemplateTypeDirective } from './template-type.directive';
-import { DummyDirective } from './templates/dummy.directive';
+import { TemplateHeaderComponent } from './template-header/template-header.component';
+import { TemplateBodyComponent } from './template-body/template-body.component';
+import { HeaderHistoryComponent } from './template-body/header-history/header-history.component';
+import { HeaderSchematicComponent } from './template-body/header-schematic/header-schematic.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TemplatesComponent,
-    TemplateTypeDirective,
-    DummyDirective
+    TemplateHeaderComponent,
+    TemplateBodyComponent,
+    HeaderHistoryComponent,
+    HeaderSchematicComponent,
   ],
   imports: [
     BrowserModule,
