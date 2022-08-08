@@ -42,3 +42,6 @@ testem.log
 Thumbs.db
 !/src/app/input/input.component.ts
 !/src/app/template-body/
+!/src/app/template-body/service-colculate.service.spec.ts
+
+!/src/app/template-body/service-calculate.service.ts

@@ -4,8 +4,35 @@
     <button class="deleteItemInput" (click)="deleteItem()"><=</button>
   </div>
   <div class="otherButtons">
-    <button *ngFor="let item of buttonInto" (click)="numberEnterInput(item)">{{item}}</button>
-    <button>=</button>
-    <button (click)="clearInput()">AC</button>
+    <div>
+      <button>(</button>
+      <button>)</button>
+      <button>%</button>
+      <button (click)="clearInput()">AC</button>
+    </div>
+    <div>
+      <button>7</button>
+      <button>8</button>
+      <button>9</button>
+      <button>/</button>
+    </div>
+    <div>
+      <button>4</button>
+      <button>5</button>
+      <button>6</button>
+      <button>*</button>
+    </div>
+    <div>
+      <button>1</button>
+      <button>2</button>
+      <button>3</button>
+      <button>-</button>
+    </div>
+    <div>
+      <button>.</button>
+      <button>0</button>
+      <button>=</button>
+      <button>+</button>
+    </div>
   </div>
 </span>

@@ -1,4 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
+import {ServiceColculateService} from './service-colculate.service';
 
 @Component({
   selector: 'app-template-body',
@@ -6,7 +7,6 @@ import {Component, Input, OnInit} from '@angular/core';
   styleUrls: ['./template-body.component.scss']
 })
 export class TemplateBodyComponent implements OnInit {
-  @Input() buttonInto: string[] = ['(',')','%','7','8','9','/','4','5','6', '*', '1', '2', '3',  '-',  '.',  '0',  '+'];
   @Input() numberEnter:string = '';
 
   constructor() { }

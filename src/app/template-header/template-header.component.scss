@@ -34,14 +34,25 @@ li {
   text-transform: lowercase;
 }
 
+.menu {
+  height: 69px;
+  font-size: 48px;
+  padding: 2px 10px 1px 15px;
+  border: 1px solid rgba(0, 0, 0, 0.47);
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  border-left: none;
+
+}
+
 //===========без наведения на ссылку
-li a {
+li button {
   text-transform: uppercase;
   text-decoration: none;
   padding: 17px 20px 16px 20px;
 }
 
-li a.history {
+li button.history {
   border-right: 1px solid rgba(0, 0, 0, 0.47);
   padding-bottom: 5px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.47);
@@ -49,14 +60,14 @@ li a.history {
   border-bottom-right-radius: 30px;
 }
 
-li a.schematic {
+li button.schematic {
   border: 1px solid rgba(0, 0, 0, 0.47);
   border-top: none;
   border-bottom-left-radius: 30px;
   border-bottom-right-radius: 30px;
 }
 
-li a.any {
+li button.any {
   border-left: 1px solid rgba(0, 0, 0, 0.47);
   border-bottom: 1px solid rgba(0, 0, 0, 0.47);
   border-top: none;
@@ -65,23 +76,39 @@ li a.any {
 
 
 //=========когда наводишь на ссылку
-li a.history:hover {
+li button.history:hover {
   border-right: 2px solid black;
   border-bottom: 2px solid black;
   box-shadow: 0px 5px 5px grey;
 }
 
-li a.schematic:hover {
+li button.schematic:hover {
   border: 2px solid black;
   border-top: none;
   box-shadow: 0px 5px 5px grey;
 }
 
-li a.any:hover {
+li button.any:hover {
     padding-bottom: 5px;
     border-bottom: 2px solid black;
     border-left: 2px solid black;
     box-shadow: 0px 5px 5px grey;
+}
+
+.menu:hover {
+  cursor: pointer;
+  border-right: 2px solid black;
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+  box-shadow: 0px 5px 5px grey;
+  text-shadow: 2px 2px 5px grey;
+}
+
+.imgOutButton:hover {
+  cursor: pointer;
+  width: 64px;
+  height: 64px;
+  padding-top: 5px;
 }
 
 
