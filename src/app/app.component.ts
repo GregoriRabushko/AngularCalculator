@@ -7,5 +7,13 @@ import {Component, Input} from '@angular/core';
 })
 export class AppComponent{
   title = 'AngularCalculator';
+  activeEnter:boolean = false;
+  showOrHideInput:boolean = true;
+
+  activeButtonCome () {
+    this.activeEnter = true;
+    this.showOrHideInput = false;
+
+  }
 }
 

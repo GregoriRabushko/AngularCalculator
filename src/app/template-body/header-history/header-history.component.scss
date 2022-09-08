@@ -1,0 +1,50 @@
+.historyNotTable {
+  display: flex;
+  justify-content: center;
+}
+
+//-------TABLE_____
+.parentTableDiv {
+  display: flex;
+  justify-content: center;
+}
+
+table {
+  display:flex;
+  flex-direction: column;
+  width: 500px;
+  text-align: center;
+  border: black solid 1px;
+}
+
+thead {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.tittle {
+  flex: 0 1 100%;
+}
+
+.classH2Thead  {
+  flex: 0 1 49.195%;
+}
+
+tbody {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.bodyTr {
+  display: flex;
+  flex: 0 1 100%;
+}
+
+.bodyTd {
+  flex: 0 1 49.195%;
+}
+
+td {
+  border: black solid 1px;
+}
+

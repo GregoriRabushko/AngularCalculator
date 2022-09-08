@@ -1,1 +1,24 @@
-<p>header-history works!</p>
+<div class="historyNotTable" *ngFor="let item of arrWithObjTask" >{{item.task}} = {{item.answer}}</div>
+<button (click)="trueOrFalse()">Показать таблицей</button>
+<div class="parentTableDiv" *ngIf="showOrHideTableHistory">
+  <table>
+    <thead>
+    <td class="tittle">
+      <h1>TABLE HISTORY!</h1>
+    </td>
+    <td class="classH2Thead">
+      <h2>Task</h2>
+    </td>
+    <td class="classH2Thead">
+      <h2>Answer</h2>
+    </td>
+    </thead>
+    <tbody>
+    <tr *ngFor="let item of arrWithObjTask" class="bodyTr">
+      <td class="bodyTd">{{item.task}}</td>
+      <td class="bodyTd">{{item.answer}}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+

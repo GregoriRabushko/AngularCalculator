@@ -9,6 +9,7 @@ import { TemplateBodyComponent } from './template-body/template-body.component';
 import { HeaderHistoryComponent } from './template-body/header-history/header-history.component';
 import { HeaderSchematicComponent } from './template-body/header-schematic/header-schematic.component';
 import {FormsModule} from "@angular/forms";
+import { InputButtonComponent } from './template-body/input-button/input-button.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import {FormsModule} from "@angular/forms";
     TemplateBodyComponent,
     HeaderHistoryComponent,
     HeaderSchematicComponent,
+    InputButtonComponent,
   ],
     imports: [
         BrowserModule,

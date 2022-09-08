@@ -2,6 +2,17 @@
   <app-template-header></app-template-header>
 </header>
 <body>
-<app-template-body></app-template-body>
+  <div *ngIf="showOrHideInput" class="containerCardInput">
+    <h1>INPUT</h1>
+      <div class="inputName">
+      <input placeholder="Your name" type="text">
+      </div>
+      <div class="inputPassword">
+        <input placeholder="Password" type="password">
+      </div>
+    <button class="buttonCome" (click)="activeButtonCome()">COME</button>
+    <a href="#">Забыли пароль?</a>
+  </div>
+  <app-template-body *ngIf="activeEnter"></app-template-body>
 </body>
 <footer></footer>

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, Input} from '@angular/core';
 
 @Component({
   selector: 'app-header-history',
@@ -6,10 +6,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header-history.component.scss']
 })
 export class HeaderHistoryComponent implements OnInit {
+  @Input() arrWithObjTask:any[] = [];
+  showOrHideTableHistory = false;
 
   constructor() { }
+  ngOnInit(): void {}
 
-  ngOnInit(): void {
+  trueOrFalse () {
+    this.showOrHideTableHistory = !this.showOrHideTableHistory;
   }
 
 }

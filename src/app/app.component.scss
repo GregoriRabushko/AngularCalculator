@@ -7,3 +7,23 @@ body {
   margin: 0px;
   border: none;
 }
+
+
+.containerCardInput {
+  display: flex;
+  flex-direction: column;
+  width: 350px;
+  //height: 350px;
+  text-align: center;
+  margin-top: 10%;
+  margin-left: 43%;
+  background: cadetblue;
+}
+
+.buttonCome {
+  text-align: center;
+  width: 100px;
+  height: 35px;
+  margin-left: 125px;
+  margin-top: 10px;
+}

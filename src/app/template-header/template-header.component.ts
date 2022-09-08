@@ -12,4 +12,8 @@ export class TemplateHeaderComponent implements OnInit {
   ngOnInit(): void {
   }
 
+
+  buttonActive () {
+
+  }
 }

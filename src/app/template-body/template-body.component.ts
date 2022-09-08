@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component,OnInit} from '@angular/core';
 import {ServiceColculateService} from './service-colculate.service';
 
 @Component({
@@ -7,16 +7,20 @@ import {ServiceColculateService} from './service-colculate.service';
   styleUrls: ['./template-body.component.scss']
 })
 export class TemplateBodyComponent implements OnInit {
-  @Input() numberEnter:string = '';
+  numberEnter:string = '';
+  arrNumber:any[] = [];
 
-  constructor() { }
+  activeButtonHistory:boolean = false;
+  activeButtonSchematic:boolean = false;
+  activeButtonCalculate:boolean = true;
+
+  constructor(private readonly calculationService: ServiceColculateService) { }
 
   ngOnInit(): void {
   }
 
-  numberEnterInput(item:any){
+  addSymbol(item:any){
     this.numberEnter += item;
-    console.log(this.numberEnter);
   }
 
   deleteItem() {
@@ -27,4 +31,36 @@ export class TemplateBodyComponent implements OnInit {
   clearInput() {
     this.numberEnter = '';
   }
+
+  calculate() {
+    const result = this.calculationService.calculate(this.numberEnter).toString(10);
+    const historyRecord={
+      task: this.numberEnter,
+      answer: result
+    };
+
+    this.numberEnter = result;
+    this.arrNumber = [...this.arrNumber, historyRecord];
+
+  }
+
+
+  buttonActiveHistory():void{
+    this.activeButtonSchematic = false;
+    this.activeButtonHistory = true;
+    this.activeButtonCalculate = false;
+  }
+
+  buttonActiveSchematic():void {
+    this.activeButtonSchematic = true;
+    this.activeButtonHistory = false;
+    this.activeButtonCalculate = false;
+  }
+
+  buttonActiveCalculate():void {
+    this.activeButtonSchematic = false;
+    this.activeButtonHistory = false;
+    this.activeButtonCalculate = true;
+  }
 }
+
