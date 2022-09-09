@@ -2,17 +2,22 @@
   <app-template-header></app-template-header>
 </header>
 <body>
-  <div *ngIf="showOrHideInput" class="containerCardInput">
-    <h1>INPUT</h1>
-      <div class="inputName">
-      <input placeholder="Your name" type="text">
-      </div>
-      <div class="inputPassword">
-        <input placeholder="Password" type="password">
-      </div>
-    <button class="buttonCome" (click)="activeButtonCome()">COME</button>
-    <a href="#">Забыли пароль?</a>
-  </div>
+<div *ngIf="showOrHideInput" class="containerForm">
+  <form action="" name="formCardInput" class="formCardInput">
+    <h1>Вход</h1>
+
+    <label>Имя</label>
+    <input placeholder="Имя пользователя" type="text">
+
+    <label>Пароль</label>
+    <input placeholder="Введите пароль" type="password">
+
+    <button class="buttonCome" (click)="activeButtonCome()">Войти</button>
+    <p>
+      У вас нет аккаунта? - <a href="#" (click)="inputOnRegistration()">Регистрация</a>
+    </p>
+  </form>
+</div>
+  <app-registration-users *ngIf="activeRegistration" (registration)="activeButtonRegistration($event)"></app-registration-users>
   <app-template-body *ngIf="activeEnter"></app-template-body>
 </body>
-<footer></footer>

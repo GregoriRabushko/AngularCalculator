@@ -10,6 +10,7 @@ import { HeaderHistoryComponent } from './template-body/header-history/header-hi
 import { HeaderSchematicComponent } from './template-body/header-schematic/header-schematic.component';
 import {FormsModule} from "@angular/forms";
 import { InputButtonComponent } from './template-body/input-button/input-button.component';
+import { RegistrationComponent } from './registration-users/registration.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { InputButtonComponent } from './template-body/input-button/input-button.
     HeaderHistoryComponent,
     HeaderSchematicComponent,
     InputButtonComponent,
+    RegistrationComponent,
   ],
     imports: [
         BrowserModule,

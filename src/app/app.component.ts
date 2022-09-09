@@ -9,11 +9,22 @@ export class AppComponent{
   title = 'AngularCalculator';
   activeEnter:boolean = false;
   showOrHideInput:boolean = true;
+  activeRegistration = false;
 
   activeButtonCome () {
     this.activeEnter = true;
     this.showOrHideInput = false;
 
+  }
+
+  inputOnRegistration() {
+    this.showOrHideInput = false;
+    this.activeRegistration = true;
+  }
+
+  activeButtonRegistration(booleanEvent:boolean) {
+    this.showOrHideInput = booleanEvent;
+    this.activeRegistration = !booleanEvent;
   }
 }
 

@@ -45,3 +45,4 @@ Thumbs.db
 !/src/app/template-body/service-colculate.service.spec.ts
 
 !/src/app/template-body/service-calculate.service.ts
+!/src/app/registration.html

@@ -1,0 +1,25 @@
+<div class="containerForm">
+  <form action="" name="formCardInput" class="formCardInput">
+    <h1>Регистрация</h1>
+
+    <label>ФИО</label>
+    <input placeholder="ФИО пользователя" type="text">
+
+    <label>Возраст</label>
+    <input placeholder="Возраст пользователя" type="text">
+
+    <label>E-mail</label>
+    <input placeholder="Введите email" type="email">
+
+    <label>Пароль</label>
+    <input placeholder="Введите пароль" type="password">
+
+    <label>Подтвердите пароль</label>
+    <input placeholder="Введите пароль" type="password">
+
+    <button class="buttonCome" (click)="registrationModel(true)">Зарегистрироваться</button>
+    <p>
+      У вас уже есть аккаунт? - <a href="#" (click)="registrationModel(true)">авторизироваться</a>
+    </p>
+  </form>
+</div>
