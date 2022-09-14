@@ -11,7 +11,7 @@ export class InputButtonComponent implements OnInit {
   @Input() set buttonType(type: string) {
     switch (type) {
       case 'operatorButton': this.buttonClasses = ['operatorsButton']; break;
-      case 'positiveNegativeButton': this.buttonClasses = ['operatorsButton', 'operatorsButtonTrueOrFalse']; break;
+      case 'positiveNegativeButton': this.buttonClasses = ['operatorsButtonTrueOrFalse']; break;
       default: this.buttonClasses = []; break;
     }
   }

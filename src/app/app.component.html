@@ -1,3 +1,4 @@
+<div class="flexContainer">
 <header>
   <app-template-header></app-template-header>
 </header>
@@ -21,3 +22,9 @@
   <app-registration-users *ngIf="activeRegistration" (registration)="activeButtonRegistration($event)"></app-registration-users>
   <app-template-body *ngIf="activeEnter"></app-template-body>
 </body>
+<footer>
+  <div class="containerFooter">
+    <div class="contentFooter">@mail</div>
+  </div>
+</footer>
+</div>

@@ -11,6 +11,7 @@ import { HeaderSchematicComponent } from './template-body/header-schematic/heade
 import {FormsModule} from "@angular/forms";
 import { InputButtonComponent } from './template-body/input-button/input-button.component';
 import { RegistrationComponent } from './registration-users/registration.component';
+import { UserMenuComponent } from './template-body/user-menu/user-menu.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { RegistrationComponent } from './registration-users/registration.compone
     HeaderSchematicComponent,
     InputButtonComponent,
     RegistrationComponent,
+    UserMenuComponent,
   ],
     imports: [
         BrowserModule,

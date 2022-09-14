@@ -8,6 +8,7 @@ import {ServiceColculateService} from './service-colculate.service';
 })
 export class TemplateBodyComponent implements OnInit {
   numberEnter:string = '';
+  minHistoryTask = '';
   arrNumber:any[] = [];
 
   activeButtonHistory:boolean = false;
@@ -42,6 +43,7 @@ export class TemplateBodyComponent implements OnInit {
     this.numberEnter = result;
     this.arrNumber = [...this.arrNumber, historyRecord];
 
+    this.minHistoryTask = historyRecord.task;
   }
 
 

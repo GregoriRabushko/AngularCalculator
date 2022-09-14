@@ -3,6 +3,16 @@ header {
   border: none;
 }
 
+.flexContainer {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+body {
+  flex: 1 1 auto;
+}
+
 .containerForm {
   height: 90vh;
   display: flex;
@@ -49,4 +59,16 @@ a {
 
 p {
   font-size: 12px;
+}
+
+footer {
+  padding: 20px;
+}
+
+.containerFooter {
+  padding:10px;
+}
+
+.contentFooter {
+  padding: 10px;
 }

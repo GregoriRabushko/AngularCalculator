@@ -1,58 +1,52 @@
+<app-user-menu></app-user-menu>
 <div class="parentDivOfNavigationOnPage">
   <div class="menuOnNavigation">>></div>
-  <img class="imgHeaderEmblem" alt="emblem" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSo08Mi3qmkDV2ivCx-Xt0vZL5LeLAPbVP2yA&usqp=CAU">
-  <div>
-    <ul>
-      <li>
-        <button (click)="buttonActiveHistory()" class="history">history</button>
-      </li>
-      <li>
-        <button (click)="buttonActiveSchematic()" class="schematic">schematic</button>
-      </li>
-      <li>
-        <button (click)="buttonActiveCalculate()" class="calculate">calculate</button>
-      </li>
-    </ul>
+  <div class="buttonOnNavigation">
+    <button (click)="buttonActiveHistory()" class="history">История</button>
+    <button (click)="buttonActiveSchematic()" class="schematic">Схема</button>
+    <button (click)="buttonActiveCalculate()" class="calculate">Калькулятор</button>
   </div>
-  <img class="imgOutButton" src="https://img2.freepng.ru/20180611/ffb/kisspng-door-closer-logo-brand-5b1f2f200d18a6.6099590515287703360537.jpg">
+  <img class="imgHeaderEmblem" alt="emblem" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSo08Mi3qmkDV2ivCx-Xt0vZL5LeLAPbVP2yA&usqp=CAU">
 </div>
 
-<span *ngIf="activeButtonCalculate" class="parentSpan">
-  <div class="inputWithDeleteItemInput">
-    <input [(ngModel)]="numberEnter" placeholder="" type="text">
-    <button class="deleteItemInput" (click)="deleteItem()"><=</button>
+<span *ngIf="activeButtonCalculate" class="containerCalculate">
+  <div class="calculateBlock">
+  <div class="divInputWithMinHistoryTask">
+    <div class="minHistoryTask">task: {{minHistoryTask}}</div>
+    <input [(ngModel)]="numberEnter" placeholder="0" type="text" class="calculateInput">
   </div>
-  <div class="otherButtons">
-    <div>
-      <button (click)="numberEnter = ''" class="operatorsButtonDelete">AC</button>
+  <div class="operatorButtons">
+    <div class="buttonsRow">
+      <button (click)="numberEnter = ''" class="clearInput">AC</button>
       <app-input-button [buttonText]="'('" (addSymbol)="addSymbol($event)" [buttonType]="'operatorButton'"></app-input-button>
       <app-input-button [buttonText]="')'" (addSymbol)="addSymbol($event)" [buttonType]="'operatorButton'"></app-input-button>
-      <app-input-button [buttonText]="'/'" (addSymbol)="addSymbol($event)" [buttonType]="'operatorButton'"></app-input-button>
+      <button class="deleteLastItemInInput" (click)="deleteItem()"><=</button>
     </div>
-    <div>
+    <div class="buttonsRow">
       <app-input-button [buttonText]="'7'" (addSymbol)="addSymbol($event)"></app-input-button>
       <app-input-button [buttonText]="'8'" (addSymbol)="addSymbol($event)"></app-input-button>
       <app-input-button [buttonText]="'9'" (addSymbol)="addSymbol($event)"></app-input-button>
-      <app-input-button [buttonText]="'*'" (addSymbol)="addSymbol($event)" [buttonType]="'operatorButton'"></app-input-button>
+      <app-input-button [buttonText]="'/'" (addSymbol)="addSymbol($event)" [buttonType]="'operatorButton'"></app-input-button>
     </div>
-    <div>
+    <div class="buttonsRow">
       <app-input-button [buttonText]="'4'" (addSymbol)="addSymbol($event)"></app-input-button>
       <app-input-button [buttonText]="'5'" (addSymbol)="addSymbol($event)"></app-input-button>
       <app-input-button [buttonText]="'6'" (addSymbol)="addSymbol($event)"></app-input-button>
-      <app-input-button [buttonText]="'-'" (addSymbol)="addSymbol($event)" [buttonType]="'operatorButton'"></app-input-button>
+      <app-input-button [buttonText]="'*'" (addSymbol)="addSymbol($event)" [buttonType]="'operatorButton'"></app-input-button>
     </div>
-    <div>
+    <div class="buttonsRow">
       <app-input-button [buttonText]="'1'" (addSymbol)="addSymbol($event)"></app-input-button>
       <app-input-button [buttonText]="'2'" (addSymbol)="addSymbol($event)"></app-input-button>
       <app-input-button [buttonText]="'3'" (addSymbol)="addSymbol($event)"></app-input-button>
-      <app-input-button [buttonText]="'+'" (addSymbol)="addSymbol($event)" [buttonType]="'operatorButton'"></app-input-button>
+      <app-input-button [buttonText]="'-'" (addSymbol)="addSymbol($event)" [buttonType]="'operatorButton'"></app-input-button>
     </div>
-    <div>
-      <app-input-button [buttonText]="'+/-'" (addSymbol)="addSymbol($event)" [buttonType]="'operatorButton'"></app-input-button>
+    <div class="buttonsRow">
       <app-input-button [buttonText]="'0'" (addSymbol)="addSymbol($event)"></app-input-button>
       <app-input-button [buttonText]="'.'" (addSymbol)="addSymbol($event)" [buttonType]="'operatorButton'"></app-input-button>
       <button (click)="calculate()" class="resultButton" >=</button>
+      <app-input-button [buttonText]="'+'" (addSymbol)="addSymbol($event)" [buttonType]="'operatorButton'"></app-input-button>
     </div>
+  </div>
   </div>
 </span>
 <app-header-history *ngIf="activeButtonHistory" [arrWithObjTask]="arrNumber"></app-header-history>
