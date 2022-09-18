@@ -25,6 +25,12 @@ export class TemplateHeaderComponent implements OnInit {
       this.activeButtonHeader.emit(value);
     }
 
+  @Output() activeAuthorizationUsers = new EventEmitter<boolean> ();
+  AuthorizationUsers (value:boolean) {
+    console.log(value);
+    this.activeAuthorizationUsers.emit(value);
+  }
+
   buttonActiveHistory() {
       this.objActiveButton.activeButtonHistory = true;
       this.objActiveButton.activeButtonSchematic = false;

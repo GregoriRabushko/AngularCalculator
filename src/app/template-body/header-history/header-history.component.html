@@ -1,22 +1,17 @@
-<div class="historyNotTable" *ngFor="let item of arrWithObjTask" >{{item.task}} = {{item.answer}}</div>
-<button (click)="trueOrFalse()">Показать таблицей</button>
+<div class="historyNotTable" *ngFor="let item of arrWithObjTask" >{{item.taskValueToTable}} = {{item.answerValueToTable}}</div>
+<button (click)="showOrHideHistoryTable()">Показать таблицей</button>
 <div class="parentTableDiv" *ngIf="showOrHideTableHistory">
   <table>
-    <thead>
-    <td class="tittle">
-      <h1>TABLE HISTORY!</h1>
-    </td>
-    <td class="classH2Thead">
-      <h2>Task</h2>
-    </td>
-    <td class="classH2Thead">
-      <h2>Answer</h2>
-    </td>
-    </thead>
     <tbody>
-    <tr *ngFor="let item of arrWithObjTask" class="bodyTr">
-      <td class="bodyTd">{{item.task}}</td>
-      <td class="bodyTd">{{item.answer}}</td>
+    <tr>
+      <td>Time</td>
+      <td>Task</td>
+      <td>Answer</td>
+    </tr>
+    <tr *ngFor="let item of arrWithObjTask">
+      <td>{{item.time}}</td>
+      <td>{{item.taskValueToTable}}</td>
+      <td>{{item.answerValueToTable}}</td>
     </tr>
     </tbody>
   </table>

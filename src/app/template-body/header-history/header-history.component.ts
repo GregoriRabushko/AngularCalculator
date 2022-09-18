@@ -12,8 +12,10 @@ export class HeaderHistoryComponent implements OnInit {
   constructor() { }
   ngOnInit(): void {}
 
-  trueOrFalse () {
+  showOrHideHistoryTable () {
     this.showOrHideTableHistory = !this.showOrHideTableHistory;
   }
+
+
 
 }

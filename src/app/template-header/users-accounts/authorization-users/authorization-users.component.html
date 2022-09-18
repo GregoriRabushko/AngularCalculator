@@ -1,4 +1,4 @@
-<div class="containerForm">
+<div *ngIf="showAuthorizationUsers" class="containerForm">
   <form action="" name="formCardInput" class="formCardInput">
     <h1>Вход</h1>
 
@@ -8,9 +8,10 @@
     <label>Пароль</label>
     <input placeholder="Введите пароль" type="password">
 
-    <button class="buttonCome" (click)="activeButtonCome()">Войти</button>
+    <button class="buttonCome" (click)="hideAuthorizationUsers(true)">Войти</button>
     <p>
       У вас нет аккаунта? - <a href="#" (click)="inputOnRegistration()">Регистрация</a>
     </p>
   </form>
 </div>
+<app-registration-users *ngIf="showRegistrationUsers" (registration)="registrationSuccessful($event)"></app-registration-users>

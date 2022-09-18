@@ -1,4 +1,4 @@
-<app-template-header (activeButtonHeader)="activeButtonHeader($event)" ></app-template-header>
+<app-template-header *ngIf="true" (activeButtonHeader)="activeButtonHeader($event)" (activeAuthorizationUsers)="activeAuthorizationUsers($event)" ></app-template-header>
 <span *ngIf="activeButtonCalculate" class="containerCalculate">
   <div class="calculateBlock">
   <div class="divInputWithMinHistoryTask">
@@ -41,5 +41,5 @@
 </span>
 <app-header-history *ngIf="activeButtonHistory" [arrWithObjTask]="arrNumber"></app-header-history>
 <app-header-schematic *ngIf="activeButtonSchematic"></app-header-schematic>
-
+<app-authorization-users *ngIf="showAuthorizationUsers" (activeButtonCome)="activeButtonCome($event)" ></app-authorization-users>
 

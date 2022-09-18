@@ -11,9 +11,10 @@ export class TemplateBodyComponent implements OnInit {
   minHistoryTask = '';
   arrNumber:any[] = [];
 
-  activeButtonHistory:boolean = false;
-  activeButtonSchematic:boolean = false;
-  activeButtonCalculate:boolean = true;
+  activeButtonHistory= false;
+  activeButtonSchematic = false;
+  activeButtonCalculate = true;
+  showAuthorizationUsers = false;
 
   constructor(private readonly calculationService: ServiceColculateService) { }
 
@@ -26,7 +27,6 @@ export class TemplateBodyComponent implements OnInit {
 
   deleteItem() {
     this.numberEnter = this.numberEnter.slice(0, this.numberEnter.length-1);
-    console.log(`VOID NEXT: ${this.numberEnter}`);
   }
 
   clearInput() {
@@ -36,20 +36,49 @@ export class TemplateBodyComponent implements OnInit {
   calculate() {
     const result = this.calculationService.calculate(this.numberEnter).toString(10);
     const historyRecord={
-      task: this.numberEnter,
-      answer: result
+      taskValueToTable: this.numberEnter,
+      time:this.getDataHistory(),
+      answerValueToTable: result
     };
 
     this.numberEnter = result;
     this.arrNumber = [...this.arrNumber, historyRecord];
 
-    this.minHistoryTask = historyRecord.task;
+    this.minHistoryTask = historyRecord.taskValueToTable;
+  }
+
+  getDataHistory () {
+    const currentData = new Date();
+
+    let hours = currentData.getHours();
+    let minutes = currentData.getMinutes();
+    let seconds = currentData.getSeconds();
+
+    return hours+':'+minutes+':'+seconds;
   }
 
   activeButtonHeader (value:any) {
     this.activeButtonHistory = value.activeButtonHistory;
     this.activeButtonSchematic = value.activeButtonSchematic;
     this.activeButtonCalculate = value.activeButtonCalculate;
+  }
+
+  activeAuthorizationUsers (value:boolean) {
+    if(value){
+      this.showAuthorizationUsers = true;
+    }
+    this.activeButtonHistory = false;
+    this.activeButtonSchematic = false;
+    this.activeButtonCalculate = false;
+  }
+
+  activeButtonCome (value:boolean) {
+    if (value) {
+      this.activeButtonHistory= false;
+      this.activeButtonSchematic = false;
+      this.activeButtonCalculate = true;
+      this.showAuthorizationUsers = false;
+    }
   }
 }
 

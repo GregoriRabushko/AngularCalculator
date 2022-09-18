@@ -17,35 +17,18 @@ table {
   border: black solid 1px;
 }
 
-thead {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.tittle {
-  flex: 0 1 100%;
-}
-
-.classH2Thead  {
-  //box-sizing: border-box; лучше использовать этй запись и не надо ничего высчитывать
-  flex: 0 1 49.195%;
-}
-
 tbody {
   display: flex;
   flex-wrap: wrap;
 }
 
-.bodyTr {
+tr {
   display: flex;
   flex: 0 1 100%;
 }
 
-.bodyTd {
-  flex: 0 1 49.195%;
-}
-
 td {
+  flex: 0 1 33.333%;
   border: black solid 1px;
 }
 

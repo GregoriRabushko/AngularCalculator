@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter} from '@angular/core';
 
 @Component({
   selector: 'app-authorization-users',
@@ -7,17 +7,31 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AuthorizationUsersComponent implements OnInit {
 
-  constructor() { }
+  showAuthorizationUsers = true;
+  showRegistrationUsers = false;
+
+  @Output() activeButtonCome = new EventEmitter<boolean> ();
+  hideAuthorizationUsers (value:boolean) {
+    this.showAuthorizationUsers = false;
+    this.showRegistrationUsers = false;
+    this.activeButtonCome.emit(value);
+  }
+
+
+  constructor() {}
 
   ngOnInit(): void {
   }
 
-
-  activeButtonCome() {
-
+  inputOnRegistration() {
+    this.showRegistrationUsers = true;
+    this.showAuthorizationUsers = false;
   }
 
-  inputOnRegistration() {
-
+  registrationSuccessful (value:boolean) {
+    if (value) {
+      this.showAuthorizationUsers = true;
+      this.showRegistrationUsers = false;
+    }
   }
 }
