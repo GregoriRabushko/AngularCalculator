@@ -5,5 +5,15 @@
     <button (click)="buttonActiveSchematic()" class="schematic">Схема</button>
     <button (click)="buttonActiveCalculate()" class="calculate">Калькулятор</button>
   </div>
-  <img class="imgHeaderEmblem" alt="emblem" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSo08Mi3qmkDV2ivCx-Xt0vZL5LeLAPbVP2yA&usqp=CAU">
+  <div class="userMenu">
+    <img (click)="menuActive=!menuActive" class="imgHeaderEmblem" alt="emblem" src="https://png.pngtree.com/element_our/20200610/ourmid/pngtree-character-default-avatar-image_2237203.jpg">
+    <div *ngIf="menuActive" class="menu">
+      <button class="menuButton">мой профиль</button>
+      <button class="menuButton">поиск</button>
+      <button class="menuButton">настройки</button>
+      <button class="menuButton">войти</button>
+      <button class="menuButton">выйти</button>
+    </div>
+  </div>
 </div>
+

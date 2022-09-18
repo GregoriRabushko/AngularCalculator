@@ -7,7 +7,7 @@ import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 })
 export class TemplateHeaderComponent implements OnInit {
 
-
+  menuActive = false;
 
   objActiveButton:any = {
     activeButtonHistory: false,
