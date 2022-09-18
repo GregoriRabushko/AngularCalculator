@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-template-header',
@@ -7,13 +7,43 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TemplateHeaderComponent implements OnInit {
 
+
+
+  objActiveButton:any = {
+    activeButtonHistory: false,
+    activeButtonSchematic: false,
+    activeButtonCalculate: true,
+  }
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  @Output() activeButtonHeader = new EventEmitter<any> ();
+    activeButtonEmitter (value:any) {
+      this.activeButtonHeader.emit(value);
+    }
 
-  buttonActive () {
+  buttonActiveHistory() {
+      this.objActiveButton.activeButtonHistory = true;
+      this.objActiveButton.activeButtonSchematic = false;
+      this.objActiveButton.activeButtonCalculate = false;
+      this.activeButtonEmitter(this.objActiveButton);
 
+  }
+
+  buttonActiveSchematic() {
+    this.objActiveButton.activeButtonHistory = false;
+    this.objActiveButton.activeButtonSchematic = true;
+    this.objActiveButton.activeButtonCalculate = false;
+    this.activeButtonEmitter(this.objActiveButton);
+  }
+
+  buttonActiveCalculate() {
+    this.objActiveButton.activeButtonHistory = false;
+    this.objActiveButton.activeButtonSchematic = false;
+    this.objActiveButton.activeButtonCalculate = true;
+    this.activeButtonEmitter(this.objActiveButton);
   }
 }

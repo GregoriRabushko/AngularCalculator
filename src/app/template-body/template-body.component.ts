@@ -46,23 +46,10 @@ export class TemplateBodyComponent implements OnInit {
     this.minHistoryTask = historyRecord.task;
   }
 
-
-  buttonActiveHistory():void{
-    this.activeButtonSchematic = false;
-    this.activeButtonHistory = true;
-    this.activeButtonCalculate = false;
-  }
-
-  buttonActiveSchematic():void {
-    this.activeButtonSchematic = true;
-    this.activeButtonHistory = false;
-    this.activeButtonCalculate = false;
-  }
-
-  buttonActiveCalculate():void {
-    this.activeButtonSchematic = false;
-    this.activeButtonHistory = false;
-    this.activeButtonCalculate = true;
+  activeButtonHeader (value:any) {
+    this.activeButtonHistory = value.activeButtonHistory;
+    this.activeButtonSchematic = value.activeButtonSchematic;
+    this.activeButtonCalculate = value.activeButtonCalculate;
   }
 }
 

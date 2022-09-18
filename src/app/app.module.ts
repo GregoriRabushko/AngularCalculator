@@ -10,8 +10,10 @@ import { HeaderHistoryComponent } from './template-body/header-history/header-hi
 import { HeaderSchematicComponent } from './template-body/header-schematic/header-schematic.component';
 import {FormsModule} from "@angular/forms";
 import { InputButtonComponent } from './template-body/input-button/input-button.component';
-import { RegistrationComponent } from './registration-users/registration.component';
+import { RegistrationComponent } from './template-header/users-accounts/registration-users/registration.component';
 import { UserMenuComponent } from './template-body/user-menu/user-menu.component';
+import { UsersAccountsComponent } from './template-header/users-accounts/users-accounts.component';
+import { AuthorizationUsersComponent } from './template-header/users-accounts/authorization-users/authorization-users.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +26,8 @@ import { UserMenuComponent } from './template-body/user-menu/user-menu.component
     InputButtonComponent,
     RegistrationComponent,
     UserMenuComponent,
+    UsersAccountsComponent,
+    AuthorizationUsersComponent,
   ],
     imports: [
         BrowserModule,

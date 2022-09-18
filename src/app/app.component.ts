@@ -11,6 +11,7 @@ export class AppComponent{
   showOrHideInput:boolean = true;
   activeRegistration = false;
 
+
   activeButtonCome () {
     this.activeEnter = true;
     this.showOrHideInput = false;
@@ -26,5 +27,17 @@ export class AppComponent{
     this.showOrHideInput = booleanEvent;
     this.activeRegistration = !booleanEvent;
   }
+
+  // onClock () {
+  //   // setInterval((()=>''), 1000);
+  //   const currentData = new Date();
+  //  let hours = currentData.getHours();
+  //  let minutes = currentData.getMinutes();
+  //  let seconds = currentData.getSeconds();
+  //
+  //  return hours+':'+minutes+':'+seconds;
+  // }
+
+
 }
 

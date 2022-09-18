@@ -1,14 +1,4 @@
-<app-user-menu></app-user-menu>
-<div class="parentDivOfNavigationOnPage">
-  <div class="menuOnNavigation">>></div>
-  <div class="buttonOnNavigation">
-    <button (click)="buttonActiveHistory()" class="history">История</button>
-    <button (click)="buttonActiveSchematic()" class="schematic">Схема</button>
-    <button (click)="buttonActiveCalculate()" class="calculate">Калькулятор</button>
-  </div>
-  <img class="imgHeaderEmblem" alt="emblem" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSo08Mi3qmkDV2ivCx-Xt0vZL5LeLAPbVP2yA&usqp=CAU">
-</div>
-
+<app-template-header (activeButtonHeader)="activeButtonHeader($event)" ></app-template-header>
 <span *ngIf="activeButtonCalculate" class="containerCalculate">
   <div class="calculateBlock">
   <div class="divInputWithMinHistoryTask">
